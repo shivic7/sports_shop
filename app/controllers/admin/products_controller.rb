@@ -14,7 +14,7 @@ class Admin::ProductsController < AdminController
   def create
     @product = Product.new(product_params)
     if @product.save
-      redirect_to admin_products_index_path
+      redirect_to admin_products_index_path, notice: 'Product was successfully created.'
     else
       render :admin_products_new_path
     end

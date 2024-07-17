@@ -69,4 +69,6 @@ end
 
 gem 'devise'
 gem 'cancancan'
-
+gem 'rspec-rails', '~> 5.0'
+gem 'factory_bot_rails'
+gem 'capybara'
