@@ -1,0 +1,30 @@
+<div class="container mt-5">
+  <h1 class="mb-4">Edit Combination</h1>
+  <%= form_for([:admin, @combination], url: "update?id=#{@combination.id}", method: "post") do |f| %>
+    <div class="form-group">
+      <%= f.label :primary_part %>
+      <%= f.text_field :condition_part_id, class: 'form-control', readonly: true%>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :affected_part_id %>
+      <%= f.text_field :affected_part_id, class: 'form-control', readonly: true %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :allowed %>
+      <%= f.select :allowed, [[true, true], [false, false]], {}, {class: "form-control"} %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :additional_price %>
+      <%= f.number_field :additional_price, class: 'form-control', step: 0.01%>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit 'Save Changes', class: 'btn btn-primary' %>
+      <%= link_to 'Cancel', "index", class: 'btn btn-secondary' %>
+    </div>
+  <% end %>
+</div>
+  
