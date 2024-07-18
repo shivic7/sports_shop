@@ -1,18 +1,6 @@
 <div class="container mt-5">
   <h1 class="mb-4">Edit Admin Users</h1>
   <%= form_with(model: @admin_user, url: "/admin/admin_users/#{@admin_user.id}", local: true, method: :patch) do |form| %>
-    <% if @admin_user.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@admin_user.errors.count, "error") %> prohibited this admin_user from being saved:</h2>
-
-        <ul>
-          <% @admin_user.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-
     <div class="form-group">
       <%= form.label :name %>
       <%= form.text_field :name, class: 'form-control' %>
